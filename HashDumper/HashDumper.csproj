@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Yura.Shared\Yura.Shared.csproj" />
+    <ProjectReference Include="../Yura.Shared/Yura.Shared.csproj" />
   </ItemGroup>
 
 </Project>

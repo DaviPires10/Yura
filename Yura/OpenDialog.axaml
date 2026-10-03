@@ -1,0 +1,61 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Yura.OpenDialog"
+        Title="Open"
+        MinHeight="200" MinWidth="450"
+        Icon="/Yura.ico"
+        WindowStartupLocation="CenterOwner"
+        SizeToContent="WidthAndHeight"
+        CanResize="False">
+    <Grid Margin="10" ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,0,6,20" VerticalAlignment="Center">Game</TextBlock>
+        <ComboBox Name="GameSelect" Grid.Row="0" Grid.Column="1" Margin="0,0,0,20"
+                  SelectionChanged="GameSelect_SelectionChanged">
+            <ComboBoxItem>Legacy of Kain Defiance</ComboBoxItem>
+            <ComboBoxItem>Tomb Raider Legend - Guardian of Light</ComboBoxItem>
+            <ComboBoxItem>Deus Ex Human Revolution</ComboBoxItem>
+            <ComboBoxItem>Tiger Archive</ComboBoxItem>
+        </ComboBox>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,0,6,0" VerticalAlignment="Center">File list</TextBlock>
+        <ComboBox Name="FileListSelect" Grid.Row="1" Grid.Column="1">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,4,6,4" VerticalAlignment="Center">Endianness</TextBlock>
+        <ComboBox Name="EndiannessSelect" Grid.Row="2" Grid.Column="1" Margin="0,4,0,4" SelectedIndex="0">
+            <ComboBoxItem>Little-endian</ComboBoxItem>
+            <ComboBoxItem>Big-endian</ComboBoxItem>
+        </ComboBox>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Margin="0,4,6,4" VerticalAlignment="Center">Platform</TextBlock>
+        <ComboBox Name="PlatformSelect" Grid.Row="3" Grid.Column="1" Margin="0,4,0,4" SelectedIndex="0">
+            <ComboBoxItem>PC</ComboBoxItem>
+            <ComboBoxItem>PlayStation 2</ComboBoxItem>
+            <ComboBoxItem>PlayStation Portable</ComboBoxItem>
+            <ComboBoxItem>PlayStation 3</ComboBoxItem>
+            <ComboBoxItem>PlayStation 4</ComboBoxItem>
+            <ComboBoxItem>Xbox</ComboBoxItem>
+            <ComboBoxItem>Xbox 360</ComboBoxItem>
+            <ComboBoxItem>Xbox One</ComboBoxItem>
+            <ComboBoxItem>Xbox Series X</ComboBoxItem>
+            <ComboBoxItem>Wii</ComboBoxItem>
+            <ComboBoxItem>GameCube</ComboBoxItem>
+        </ComboBox>
+
+        <TextBlock Grid.Row="4" Grid.Column="0" Margin="0,4,6,4" VerticalAlignment="Center">Alignment</TextBlock>
+        <TextBox Name="AlignmentField" Grid.Row="4" Grid.Column="1" Margin="0,4,0,4" Text="0x9600000" />
+        <Image Grid.Row="4" Grid.Column="2" Margin="5,0,0,0" Width="16" Height="16"
+               Source="avares://Yura/Images/StatusInformation.png"
+               ToolTip.Tip="TThe alignment of the bigfile, this is needed to calculate the right file offset.
+                                       &#x0a;For Legend and Anniversary this is usually 0x9600000, in Underworld and later use 0x7FF00000."/>
+        
+        <Button Grid.Row="5" Grid.ColumnSpan="3" Content="Open" Padding="10,4"
+                Margin="10" HorizontalAlignment="Right" Click="OkButton_Click" />
+    </Grid>
+</Window>

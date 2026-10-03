@@ -8,7 +8,7 @@ namespace Yura
         public Game Game { get; }
         public Endianness Endianness { get; }
         public int Alignment { get; }
-        public string FileList { get; }
+        public string? FileList { get; }
         public Platform Platform { get; }
     }
 }

@@ -1,0 +1,16 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Yura.MessageBox"
+        Width="400" SizeToContent="Height"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False"
+        Icon="/Yura.ico">
+    <StackPanel Margin="16" Spacing="16">
+        <TextBlock Name="MessageText" TextWrapping="Wrap" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8">
+            <Button Name="OkBtn" Content="OK" MinWidth="80" Click="OkBtn_Click"/>
+            <Button Name="CancelBtn" Content="Cancel" MinWidth="80" Click="CancelBtn_Click" IsVisible="False"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

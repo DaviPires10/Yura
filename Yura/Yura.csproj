@@ -1,73 +1,48 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net10.0-windows</TargetFramework>
-    <UseWPF>true</UseWPF>
-    <UseWindowsForms>true</UseWindowsForms>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ApplicationIcon>Yura.ico</ApplicationIcon>
+    <AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
     <Version>1.7.2</Version>
+    <SatelliteResourceLanguages>en-US</SatelliteResourceLanguages>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\BinaryFile.png" />
-    <None Remove="Images\ClassFile.png" />
-    <None Remove="Images\FolderClosed.png" />
-    <None Remove="Images\Image.png" />
-    <None Remove="Images\ImageStack.png" />
-    <None Remove="Images\SoundFile.png" />
-    <None Remove="Images\StatusInformation.png" />
-    <None Remove="Images\TextFile.png" />
-    <None Remove="Images\ZipFile.png" />
-    <None Remove="Yura.ico" />
+    <AvaloniaResource Include="Images/**" />
+    <AvaloniaResource Include="Themes/**" />
+    <AvaloniaResource Include="Yura.ico" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.3.22" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.3.22" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.22" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.22" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="11.3.22" Condition="'$(Configuration)' == 'Debug'" />
     <PackageReference Include="Sentry" Version="6.3.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Yura.Shared\Yura.Shared.csproj" />
+    <ProjectReference Include="../Yura.Shared/Yura.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\BinaryFile.png" />
-    <Resource Include="Images\ClassFile.png" />
-    <Resource Include="Images\FolderClosed.png" />
-    <Resource Include="Images\Image.png" />
-    <Resource Include="Images\ImageStack.png" />
-    <Resource Include="Images\SoundFile.png" />
-    <Resource Include="Images\StatusInformation.png" />
-    <Resource Include="Images\TextFile.png" />
-    <Resource Include="Images\ZipFile.png" />
-    <Resource Include="Yura.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
+    <Compile Update="Properties/Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="Properties\Settings.Designer.cs">
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
+    <EmbeddedResource Update="Properties/Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
 
 </Project>

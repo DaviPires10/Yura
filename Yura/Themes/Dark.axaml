@@ -1,0 +1,31 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Styles.Resources>
+        <SolidColorBrush x:Key="PrimaryBackground">#1E1E1E</SolidColorBrush>
+        <SolidColorBrush x:Key="SecondaryBackground">#252526</SolidColorBrush>
+        <SolidColorBrush x:Key="SecondaryHover">#2A2D2E</SolidColorBrush>
+        <SolidColorBrush x:Key="ForegroundColor">#D4D4D4</SolidColorBrush>
+    </Styles.Resources>
+
+    <Style Selector="Window">
+        <Setter Property="Background" Value="{DynamicResource PrimaryBackground}" />
+    </Style>
+    <Style Selector="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+    </Style>
+    <Style Selector="Menu">
+        <Setter Property="Background" Value="{DynamicResource PrimaryBackground}" />
+    </Style>
+    <Style Selector="ListBox">
+        <Setter Property="Background" Value="{DynamicResource PrimaryBackground}" />
+    </Style>
+    <Style Selector="ListBoxItem:selected /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource SecondaryBackground}" />
+    </Style>
+    <Style Selector="ListBoxItem:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource SecondaryHover}" />
+    </Style>
+    <Style Selector="TreeView">
+        <Setter Property="Background" Value="{DynamicResource PrimaryBackground}" />
+    </Style>
+</Styles>

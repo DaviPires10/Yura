@@ -1,6 +1,6 @@
 ﻿namespace Yura
 {
-    internal enum Theme
+    public enum Theme
     {
         Light,
         Dark

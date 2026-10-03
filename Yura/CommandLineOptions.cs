@@ -14,7 +14,7 @@ namespace Yura
             _args = args;
         }
 
-        public string GetOption(string option)
+        public string? GetOption(string option)
         {
             for (var i = 0; i < _args.Length; i++)
             {
@@ -75,7 +75,7 @@ namespace Yura
             }
         }
 
-        public string FileList
+        public string? FileList
         {
             get
             {

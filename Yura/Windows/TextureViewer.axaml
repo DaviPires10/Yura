@@ -1,0 +1,10 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Yura.TextureViewer"
+        Background="LightGray"
+        Icon="/Yura.ico"
+        Title="Texture" Height="450" Width="800">
+    <Grid>
+        <Image Name="TextureImage" Stretch="None" />
+    </Grid>
+</Window>

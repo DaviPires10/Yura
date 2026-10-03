@@ -1,0 +1,34 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Yura.SearchWindow"
+        Title="Deep search"
+        WindowStartupLocation="CenterOwner"
+        Height="600" Width="500"
+        Icon="/Yura.ico">
+    <Grid Margin="10" ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,*,Auto">
+
+        <ComboBox Grid.Row="0" Grid.Column="0" Name="TypeSelect" SelectedIndex="0" Padding="5">
+            <ComboBoxItem>Texture</ComboBoxItem>
+            <ComboBoxItem>Sound</ComboBoxItem>
+            <ComboBoxItem>Animation</ComboBoxItem>
+            <ComboBoxItem>DTP</ComboBoxItem>
+        </ComboBox>
+
+        <TextBox Grid.Row="0" Grid.Column="1" Name="IdField" Padding="5" />
+        <Button Grid.Row="0" Grid.Column="2" Content="Search" Padding="5" Click="SearchButton_Click" />
+
+        <ListBox Grid.Row="1" Grid.ColumnSpan="3" Margin="0,10" Name="SearchResults"
+                 DoubleTapped="SearchResults_DoubleTapped">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="350,100">
+                        <TextBlock Grid.Column="0" Text="{Binding File}" />
+                        <TextBlock Grid.Column="1" Text="{Binding Section}" />
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ProgressBar Grid.Row="2" Grid.ColumnSpan="3" Height="10" Name="Progress" />
+    </Grid>
+</Window>

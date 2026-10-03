@@ -1,0 +1,37 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Yura.SettingsWindow"
+        Title="Settings"
+        Width="350" Height="300"
+        Icon="/Yura.ico"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="10" ColumnDefinitions="Auto,*" RowDefinitions="Auto,Auto,Auto,Auto">
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Margin="5" VerticalAlignment="Center">Theme</TextBlock>
+        <ComboBox Grid.Row="0" Grid.Column="1" Margin="5" Name="ThemeSelect"
+                  SelectionChanged="Theme_SelectionChanged">
+            <ComboBoxItem>Light</ComboBoxItem>
+            <ComboBoxItem>Dark</ComboBoxItem>
+        </ComboBox>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="5" VerticalAlignment="Center">Spec mask view</TextBlock>
+        <ComboBox Grid.Row="1" Grid.Column="1" Margin="5" Name="SpecMaskViewSelect"
+                  SelectionChanged="SpecMaskView_SelectionChanged">
+            <ComboBoxItem>Display languages</ComboBoxItem>
+            <ComboBoxItem>Display bits</ComboBoxItem>
+            <ComboBoxItem>Hexadecimal</ComboBoxItem>
+        </ComboBox>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Margin="5" VerticalAlignment="Center">Double-click action</TextBlock>
+        <ComboBox Grid.Row="2" Grid.Column="1" Margin="5" Name="ClickActionSelect"
+                  SelectionChanged="ClickAction_SelectionChanged">
+            <ComboBoxItem>Open file</ComboBoxItem>
+            <ComboBoxItem>Only open in Yura</ComboBoxItem>
+            <ComboBoxItem>Export file</ComboBoxItem>
+        </ComboBox>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Margin="5" VerticalAlignment="Center">File associations</TextBlock>
+        <Button Grid.Row="3" Grid.Column="1" Margin="5" Name="FileAssociationsBtn"
+                Click="FileAssociations_Click">Update</Button>
+    </Grid>
+</Window>
